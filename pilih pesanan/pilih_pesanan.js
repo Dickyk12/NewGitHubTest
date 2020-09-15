@@ -11,9 +11,31 @@ var firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
-  function add_task(){
-    console.log("add_task");
+
+function add_task(){
+    input_box= document.getElementById("input_box");
+    input_date= document.getElementById("Input_date");
+    if(input_box.value.length !=0 && input_date.value.length !=0) {
+
+
+
+
+
+        var key = firebase.database().ref().child("unfinished_task").push().key;
+        var task = {
+            task: input_box.value,
+            date: input_date.value,
+            key: key
+        };
+        var updates = {};
+        updates["/unfinished_task/" + key] = task;
+        firebase.database().ref().update(updates);
+
+
+    }
 }
+    
+
 
 function task_done(){
     console.log("task_done");
