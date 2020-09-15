@@ -16,12 +16,14 @@ function add_task(){
     input_box= document.getElementById("input_box");
     input_date= document.getElementById("Input_date");
     if(input_box.value.length !=0 && input_date.value.length !=0) {
+        console.log('tes')
 
 
 
 
 
         var key = firebase.database().ref().child("unfinished_task").push().key;
+        
         var task = {
             task: input_box.value,
             date: input_date.value,
