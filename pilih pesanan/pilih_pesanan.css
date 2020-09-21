@@ -1,262 +1,119 @@
-body{
-    background-color: #75b79e;
-}
-
-#content_container{
-    background-color: #5b5656;
-    width: 50%;
-    margin: auto;
-    display: inline-block;
-    padding-bottom: 50px;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 5%);
-}
-#finish_task_header{
-    margin: auto;
-    background-color: #4d4646;
-    color: white;
-    width: 90%;
-    height: 45px;
-    font-size: 29px;
-    font-family: monospace;
-    text-align: center;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px ;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-#task_input_container{
-    background-color: #fff;
-    margin: 10px auto;
-    height: 120px;
-    width: 90%;
-    text-align: center;
-    margin-bottom: 60px;
-}
-#input_box{
-    width: 60%;
-    float: left;
-    height: 50px;
-    background-color: none;
-    border : none;
-    border-bottom: 2px solid #7fcd91;
-    text-align: center;
-    font-family: monospace;
-    font-weight: bold;
-    font-size: 15px;
-    border-right: 0.2px solid #4d4646;
-    transition: 0.3s;
-}
-#input_box :focus{
-    border-bottom : 4px solid #2c786c;
-    outline:none;
-}
-#input_date {
-    width: 40%;
-    float: left;
-    height: 50px;
-    background-color: none;
-    border: none;
-    border-bottom: 2px solid #7fcd91;
-    text-align: center;
-    font-family: monospace;
-    font-weight: bold;
-    font-size: 15px;
+*{
+    margin: 0;
     padding: 0;
-    transition: 0.3s;
-}
-#input_date :focus{
-    border-bottom: 4px solid #2c786c;
-    outline: none;
-}
-
-::-webkit-datetime-edit-fields-wrapper {
-    background: white; margin-left: 50px;
-}
-::-webkit-datetime-edit-text {
-    color: red; padding: 0 0.3em;
-}
-::-webkit-datetime-edit-month-field {
-    color: black; font-family: monospace;
-}
-::-webkit-datetime-edit-day-field {
-    color: black; font-family: monospace;
-}
-::-webkit-datetime-edit-year-field {
-    color: black; font-family: monospace;
-}
-::-webkit-inner-spin-button{
-    display: none;
-}
-::-webkit-calendar-picker-indicator {
-    opacity: 1;
-    display: block;
-    float: left;
-    margin-right: 50px;
-    color: #fa163f;
-    width: 15.5px;
-    height: 12.5px;
-}
-#input_button{
-    width: 60%;
-    float: left;
-    margin-left: 20%;
-    margin-top: 20px;
-    background-color: #fff;
-    height: 40px;
-    color: #2c786c;
-    cursor: pointer;
-    outline: none;
-    text-align: center;
-    font-family: monospace;
-    font-size: 17px;
-    text-align: center;
-    border: 2px solid #75b79e;
-    border-radius: 5px;
-}
-#input_button:hover{
-    background-color: #75b79e;
-    color:white;
-}
-#input_button :active{
-    transform: translateY(4px);
-}
-.header{
-    float: left;
-    margin-left: 5%;
-    background-color: #4d4646;
-    color: white;
-    text-align: center;
-    font-family: monospace;
-    font-weight: bold;
-    font-size: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    box-shadow: 0px 5px #4d5656;
-}
-.container{
-    float: left;
-    margin-left: 5%;
-    margin-bottom: 40px;
-    background-color: #f5eaea;
-    width: 90%;
-    height: 390px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-.task_container{
-    background-color: #fff;
-    display: inline-block;
-    width: 87%;
-    height: 100px;
-    margin: 0 auto;
-    margin-left: 40px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
-.task_container:hover{
-    border: 2px solid #75b79e;
     box-sizing: border-box;
 }
-#task_data{
-    display: inline-block;
-    float: left;
-    width: 200px;
-    height: 100%;
-    margin-left: 10px;
+body{
+    background-image: linear-gradient(120deg,#e2c35d,  #d88771) ;
+    color: white;
+    font-family: "caveat", sans-serif;
+    min-height: 100vh;
 }
-#task_tool{
-    display: inline-block;
-    float: right;
-    height: 100%;
+header{
+    font-size: 1.5rem;
+}
+header,
+form{
+    min-height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#task_done_button{
-    float: right;
-    height: 30px;
-    width: 30px;
-    cursor: pointer;
-    background-color: #fff;
+form input,
+form button{
+    padding: 0.5rem;
+    font-size: 2rem;
     border: none;
-    border-radius: 20px;
-    outline: none;
-    margin-right: 5px;
+    background: white;
 }
-#task_done_button:hover{
-    background-color: #75b79e;
+form button{
+    color: #d88771;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+form button:hover{
+    background:#d88771 ;
     color: white;
 }
-#task_done_button:active{
-    transform: translateY(4px);
+.todo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-#task_edit_button{
-    float: right;
-    height: 30px;
-    width: 30px;
-    cursor: pointer;
-    background-color: #fff;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    margin-right: 5px;
+.todo-list{
+    min-width: 30% ;
+    list-style: none;
 }
-#task_edit_button:hover{
-    background-color: #4d4646;
+.todo{
+    margin: 0.5rem;
+    background: white;
+    color: black;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 1s ease;
+}
+.todo li{
+    flex: 1;
+}
+.trash-btn,
+.complete-btn{
+    background: #ff6f47;
     color: white;
-}
-#task_edit_button:active{
-    transform: translateY(4px);
-}
-#task_delete_button{
-    float: right;
-    height: 30px;
-    width: 30px;
-    cursor: pointer;
-    background-color: #fff;
     border: none;
-    border-radius: 20px;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.complete-btn{
+    background: rgb(73,204,73);
+}
+.todo-item{
+    padding: 0rem 0.5rem;
+}
+.fa-trash,
+.fa-check{
+    pointer-events: none;
+}
+.completed{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+.fall{
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+}
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     outline: none;
-    margin-right: 5px;
+    border: none;
 }
-#task_delete_button:hover{
-    background-color: #fa163f;
-    color: white;
+.select{
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
 }
-#task_delete_button:active{
-    transform: translateY(4px);
+select{
+    color: #ff6f47;
+    width: 10rem;
+    cursor: pointer;
+    padding: 1rem;
 }
-#task_title{
-    background-color:#fff;
-    font-family: monospace;
-    font-weight: bold;
-    font-size: 15px;
-    float: left;
-    width: 100%;
+.select::after{
+    content: "\25BC";
+    position: absolute;
+    background: #ff6f47;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
 }
-#task_date{
-    background-color: #fff;
-    font-family: monospace;
-    color: grey;
-    font-size: 12px;
-    float: left;
-    margin: 0;
-    margin-bottom: 5px;
-    width: 100%;
-}
-::-webkit-scrollbar {
-    width: 10px;
-}
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-::-webkit-scrollbar-thumb {
-    background: #888;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
+.select:hover::after{
+    background: white;
+    color: #ff6f47;
 }
