@@ -46,7 +46,9 @@ function deletecheck(e){
     //delete todo
     if(item.classList[0] === "trash-btn") {
         const todo = item.parentElement;
+        //animation
         todo.classList.add('fall');
+        removelocalTodos(todo); 
         todo.addEventListener('transitionend', function(){
             todo.remove();
         })
@@ -111,10 +113,9 @@ function getTodos(){
         todoDiv.classList.add('todo');
         //Create LI
         const newTodo = document.createElement('li');
-        newTodo.innerText = todoInput.value;
+        newTodo.innerText = todo;
         newTodo.classList.add('todo-item');
         todoDiv.appendChild(newTodo);
-        
         //check mark button
         const completedButton = document.createElement('button');
         completedButton.innerHTML = '<i class="fas fa-check"></i>';
@@ -129,5 +130,17 @@ function getTodos(){
         todolist.appendChild(todoDiv);
 
     });
+}
+
+function removelocalTodos(todo) {
+    let todos;
+    if (localStorage.getItem("todos")===null){
+        todos= [];
+    } else {
+        todos = JSON.parse(localStorage.getItem("todos"));
+    }
+    const todoIndex = todo.children[0].innerText;
+    todos.splice(todos.indexOf(todoIndex), 1);
+    localStorage.setItem('todos', JSON.stringify(todos));
 }
 
